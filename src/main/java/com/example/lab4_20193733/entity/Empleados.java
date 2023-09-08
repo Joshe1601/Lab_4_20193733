@@ -39,16 +39,16 @@ public class Empleados {
     private String job_id;
 
     @Column (name = "salary")
-    private double salary;
+    private Double salary;
 
     @Column (name = "commission_pct")
-    private double commission_pct;
+    private Double commission_pct;
 
     @Column (name = "manager_id")
-    private int manager_id;
+    private Integer manager_id;
 
     @Column (name = "department_id")
-    private int department_id;
+    private Integer department_id;
 
 
 }

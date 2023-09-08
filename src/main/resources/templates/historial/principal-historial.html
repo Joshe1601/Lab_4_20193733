@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/bootstrap.min.css}" rel="stylesheet" crossorigin="anonymous">
+    <title>Empleados</title>
+</head>
+<body>
+<header class="header ">
+    <nav>
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class="nav-link" href="/empleados">Empleados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/historial">Historial</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/reportes">Reportes</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="container">
+        <h1 class="pb-2 mb-4 border-bottom">Historial de Empleados</h1>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Nombre completo</th>
+                <th scope="col">Departamento</th>
+                <th scope="col">Fecha de inicio</th>
+                <th scope="col">Fecha de fin</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="historial : ${historialTrabajo}">
+                <td th:text="${historial.getJob_id()}"></td>
+                <td th:text="${historial.getDepartment_id()}"></td>
+                <td th:text="${historial.getStart_date()}"></td>
+                <td th:text="${historial.getEnd_date()}"></td>
+            </tbody>
+        </table>
+
+    </div>
+</main>
+</body>
+</html>
