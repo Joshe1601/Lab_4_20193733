@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar empleado</title>
+</head>
+<body>
+<header class="header ">
+    <nav>
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class="nav-link" href="/empleados">Empleados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/historial">Historial</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/reportes">Reportes</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <form action="/empleados/guardar/">
+        <div class="form-input">
+            <label for="first_name">Nombre</label>
+            <input type="text" name="first_name" id="first_name" placeholder="Nombre" disabled>
+        </div>
+        <div class="form-input">
+            <label for="last_name">Apellido</label>
+            <input type="text" name="last_name" id="last_name" placeholder="Apellido" disabled>
+        </div>
+        <div class="form-input">
+            <label for="email">Correo electrónico</label>
+            <input type="email" name="email" id="email" placeholder="Correo electrónico" disabled>
+        </div>
+        <div class="form-input">
+            <label for="phone_number">Número de teléfono</label>
+            <input type="tel" name="phone_number" id="phone_number" placeholder="Número de teléfono" required>
+        </div>
+        <div class="form-input">
+            <label for="hire_date">Fecha de contratación</label>
+            <input type="date" name="hire_date" id="hire_date" placeholder="Fecha de contratación" disabled>
+        </div>
+        <div class="form-input">
+            <label for="job_id">Puesto</label>
+            <input type="text" name="job_id" id="job_id" placeholder="Puesto" disabled>
+        </div>
+        <div class="form-input">
+            <label for="salary">Salario</label>
+            <input type="number" name="salary" id="salary" placeholder="Salario" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+
+</main>
+
+</body>
+</html>

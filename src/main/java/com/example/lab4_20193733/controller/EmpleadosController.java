@@ -31,6 +31,16 @@ public class EmpleadosController {
         return "empleados/principal-empleados";
     }
 
+    @GetMapping(value = "/empleados/editar/{id}")
+    public String editarEmpleado(Model model, @PathVariable("id") int idEmpleado) {
+
+        Empleados empleado = empleadosRepository.findById(idEmpleado).orElse(null);
+
+        model.addAttribute("empleado", empleado);
+
+        return "empleados/editar-empleado";
+    }
+
     @PostMapping(value = "/buscarEmpleado")
     public String buscarEmpleado(Model model, @RequestParam("search") String search) {
 
@@ -39,6 +49,13 @@ public class EmpleadosController {
         model.addAttribute("listaEmpleados", listaEmpleados);
 
         return "empleados/principal-empleados";
+    }
+
+    @PostMapping(value = "/empleados/guardar")
+    public String guardarEmpleado(Model model, Empleados empleado) {
+
+
+        return "redirect:/empleados";
     }
 
 
